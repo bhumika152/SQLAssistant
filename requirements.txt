@@ -1,0 +1,9 @@
+# Python dependencies
+streamlit
+psycopg2-binary
+pgvector
+sqlparse
+pandas
+google-generativeai 
+sqlalchemy
+python-dotenv
