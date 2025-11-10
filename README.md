@@ -1,6 +1,6 @@
 # 🧠 NLP-SQL Search Engine
 
-A natural language to SQL query translation and retrieval system using PostgreSQL + pgvector + OpenAI embeddings, enabling users to query structured databases with human-like language.
+A natural language to SQL query translation and retrieval system using PostgreSQL + pgvector + Google gemini embeddings, enabling users to query structured databases with human-like language.
 
 # 📸 Demo Preview
 
@@ -10,38 +10,61 @@ A natural language to SQL query translation and retrieval system using PostgreSQ
 
 # ⚙️ Tech Stack
 Category	Tools / Libraries
+
 Language	🐍 Python 3.10+
+
 Database	🐘 PostgreSQL + pgvector extension
+
 Containerization	🐳 Docker + docker-compose
+
 ORM / DB Access	psycopg2
+
 Embedding Model	Google gemini Embeddings 
+
 App Structure	Modular folder hierarchy (db_init, scripts, src)
 
 
 # 🧩 Project Structure
 nlp-sql-search/
+
 ├─ docker-compose.yml
+
 ├─ db_init/
+
 │  ├─ init-db.sql          # create tables + sample data
+
 │  └─ create_pgvector.sql  # create pgvector extension
+
 ├─ scripts/
+
 │  ├─ populate_embeddings.py
+
 │  └─ seed_additional.py
+
 ├─ src/
+
 │  ├─ main.py              # main app logic
+
 │  ├─ nlp_to_sql.py        # convert natural language → SQL
+
 │  └─ utils.py             # helpers, validation, logging
+
 ├─ .env                    # OpenAI key, DB creds
+
 └─ README.md
 
 # 🚀 Setup & Run
 1️⃣ Clone the Repository
+
 git clone https://github.com/bhumika152/SQLAssistant.git
+
 cd nlp-sql-search
 
 2️⃣ Environment Setup
 python -m venv .venv
+
 .\.venv\Scripts\activate
+
 pip install -r requirements.txt
 
 
