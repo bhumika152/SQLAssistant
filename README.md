@@ -1,14 +1,14 @@
-🧠 NLP-SQL Search Engine
+# 🧠 NLP-SQL Search Engine
 
 A natural language to SQL query translation and retrieval system using PostgreSQL + pgvector + OpenAI embeddings, enabling users to query structured databases with human-like language.
 
-📸 Demo Preview
+# 📸 Demo Preview
 
 <img width="1328" height="887" alt="image" src="https://github.com/user-attachments/assets/b2e9edd4-86e6-450d-b30c-c5495159c7db" />
 
 
 
-⚙️ Tech Stack
+# ⚙️ Tech Stack
 Category	Tools / Libraries
 Language	🐍 Python 3.10+
 Database	🐘 PostgreSQL + pgvector extension
@@ -18,7 +18,7 @@ Embedding Model	Google gemini Embeddings
 App Structure	Modular folder hierarchy (db_init, scripts, src)
 
 
-🧩 Project Structure
+# 🧩 Project Structure
 nlp-sql-search/
 ├─ docker-compose.yml
 ├─ db_init/
@@ -34,7 +34,7 @@ nlp-sql-search/
 ├─ .env                    # OpenAI key, DB creds
 └─ README.md
 
-🚀 Setup & Run
+# 🚀 Setup & Run
 1️⃣ Clone the Repository
 git clone https://github.com/bhumika152/SQLAssistant.git
 cd nlp-sql-search
@@ -55,23 +55,24 @@ POSTGRES_DB=demodb
 🐳 Run with Docker
 3️⃣  Database Initialization
 
-# Start PostgreSQL with pgvector
+-> Start PostgreSQL with pgvector
 docker-compose up -d
 
-# Check if database is ready
+-> Check if database is ready
 docker-compose logs db
 
-# Verify pgvector extension
+-> Verify pgvector extension
 docker-compose exec db psql -U postgres -d demodb -c "SELECT * FROM pg_extension WHERE extname = 'vector';"
 
-4. Run the Application
-# Install Python dependencies
+# 4. Run the Application
+
+->Install Python dependencies
 pip install -r requirements.txt
 
-# Launch Streamlit app
+-> Launch Streamlit app
 streamlit run app/streamlit_app.py
 
-🧬 Embedding Population
+# 🧬 Embedding Population
 
 After tables are created, populate embeddings:
 
@@ -86,7 +87,7 @@ Generates vector embeddings via Google gemini
 
 Stores them in the pgvector column
 
-✨ Features
+# ✨ Features
 🤖 AI-Powered SQL Generation: Convert natural language to SQL using OpenAI GPT
 
 🔍 Hybrid Vector Search: Combine traditional SQL with semantic vector search
@@ -100,7 +101,7 @@ Stores them in the pgvector column
 🐳 Docker Ready: Complete containerized setup with pgvector
 
 
-🧠 Methodology
+# 🧠 Methodology
 
 Input Query → User enters natural language text
 
@@ -113,7 +114,7 @@ Vector Retrieval → Search semantically similar entries via pgvector
 Ranking & Result Display → Return the most relevant tuples
 
 
-📊 Database Schema Example
+# 📊 Database Schema Example
 Table	Columns
 documents	id (PK), content, embedding (vector)
 metadata	doc_id (FK), tags, timestamp
@@ -129,7 +130,7 @@ SELECT name, salary, hire_date
 FROM employees 
 WHERE hire_date > '2022-01-01' AND salary > 80000;
 
-🧱 References
+# 🧱 References
 
 PostgreSQL Documentation
 
@@ -141,11 +142,11 @@ Google Gemini Embeddings Guide
 
 LangChain Docs
 
-🪪 License
+# 🪪 License
 
 This project is licensed under the MIT License – free to use and modify.
 
-👩‍💻 Author
+# 👩‍💻 Author
 
 Bhumika Raheja
 BTech, BML Munjal University
